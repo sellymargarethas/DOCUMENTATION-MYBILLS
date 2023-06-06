@@ -129,7 +129,7 @@ To create a Digital Signature, perform the following steps :
     ```php
     HTTPMethod +”:“+ EndpointUrl +”:”+ JwtSignature +”:“+ Lowercase(HexEncode(SHA256(minify(RequestBody))))+“:“+ TimeStamp
     ```
-    **TimeStamp format RFC 3339 (yyyy-MM-ddTHH:mm:ss+07:00)**
+    **TimeStamp format RFC 3339 (yyyy-MM-ddTHH:mm:ss+07:00)** <br>
     *encrypt checker: https://www.devglan.com/online-tools/hmac-sha256-online
 2. Sign with Symmetric Signature with algorithm **HMAC_SHA512 ([API Secret Key],stringToSign)**, which results in the following :
     ```console
