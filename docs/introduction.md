@@ -39,7 +39,7 @@ The communication encryption model uses Standard Symmetric Encryption Signature 
 
 #### URI Path Standardization
 URI resource path standardization with the following format :
-```php
+```json
 [domain-api]/[version]/[product-type]
 ```
 
@@ -66,7 +66,7 @@ __** Difference for every device__
 ## JWT Signature
 To create a JWT Signature, perform the following steps :
 1. Construct a JWT header in the following format :
-    ```php
+    ```json
     {
        "alg": "HS256",
        "typ": "JWT"
@@ -74,7 +74,7 @@ To create a JWT Signature, perform the following steps :
     ```
 2. Base64url encode the JWT header.
 3. Create a JWT Payload in the following format :
-    ```php
+    ```json
         {
            "merchantID": (int)5,
            "merchantOutletID": (int)896,
@@ -90,8 +90,8 @@ To create a JWT Signature, perform the following steps :
 9. Create Final JWT Signature.
 10. Add Final JWT Signature result to header field Authorization as Basic Authorization in the request message.
 
-Sample JWT Signature Code Snippet on PHP :
-```php
+Sample JWT Signature Code Snippet on json :
+```json
     {
         # Create token header as a JSON string
         $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
@@ -126,7 +126,7 @@ Sample JWT Signature Code Snippet on PHP :
 ## Digital Signature
 To create a Digital Signature, perform the following steps :
 1. Construct a stringToSign in the following format :
-    ```php
+    ```json
     HTTPMethod +”:“+ EndpointUrl +”:”+ JwtSignature +”:“+ Lowercase(HexEncode(SHA256(minify(RequestBody))))+“:“+ TimeStamp
     ```
     **TimeStamp format RFC 3339 (yyyy-MM-ddTHH:mm:ss+07:00)** <br>
@@ -137,8 +137,8 @@ To create a Digital Signature, perform the following steps :
     ```
 3. Add Symmetric Signature result to header field **X-SIGNATURE** in request message
 
-Sample Digital Signature Code Snippet on PHP :
-```php
+Sample Digital Signature Code Snippet on json :
+```json
 # Init value
 $timestamp = '2022-07-15T17:11:11+07:00';
 

@@ -24,7 +24,7 @@ HTTP Method : POST
 |customerPeriode |string(64) |Total n month would be paid **(mandatory for specified product)** |conditional |
 
 ### Sample HTTP Raw R
-```php
+```json
 POST .../v2.0/inquiry HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -41,7 +41,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -95,7 +95,7 @@ HTTP Method : POST
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST .../v2.0/payment HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -110,7 +110,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -162,7 +162,7 @@ HTTP Method : POST
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
 ### Sample HTTP Raw Request		
-```php
+```json
 POST .../v2.0/payment HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -175,7 +175,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -229,7 +229,7 @@ HTTP Method : POST
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST https://www.partner-url.com/ HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -264,7 +264,7 @@ X-TIMESTAMP: 2022-01-18T13:50:04+07:00
 }
 ```
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",

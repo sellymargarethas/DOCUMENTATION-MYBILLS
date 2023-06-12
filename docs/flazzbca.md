@@ -20,7 +20,7 @@ HTTP Method : POST
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST .../v2.0/bca-flazz-get-credential HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -33,7 +33,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -81,7 +81,7 @@ HTTP Method : POST
 |requestData |string(448) |Card Data |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST .../v2.0/bca-flazz-inquiry HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -97,7 +97,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -151,7 +151,7 @@ HTTP Method : POST
 |requestData |string(448) |Card Data |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST .../v2.0/bca-flazz-payment HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -167,7 +167,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -222,7 +222,7 @@ HTTP Method: POST
 |requestData |string(448) |Card Data |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST https://www.partner-url.com/bca-flazz-ack HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -237,7 +237,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -272,7 +272,7 @@ HTTP Method : POST
 |requestData |string(448) |Card Data |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST https://www.partner-url.com/bca-flazz-reversal HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -287,7 +287,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
@@ -321,7 +321,7 @@ HTTP Method : POST
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
 ### Sample HTTP Raw Request
-```php
+```json
 POST https://www.partner-url.com/bca-flazz-advice HTTP/1.2
 Content-type: application/json
 X-TIMESTAMP: 2022-01-18T13:50:04+07:00
@@ -335,7 +335,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 ### Sample HTTP Raw Response (Success)
-```php
+```json
 {
     "responseCode": "00",
     "responseMessage": "Success",
