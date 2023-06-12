@@ -1,87 +1,30 @@
 # Disbursement
 ## API Inquiry Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Inquiry</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/disbursement-inquiry </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="7">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>productCode </td>
-	<td>string(64) </td>
-	<td>Product Code </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>productPrice </td>
-	<td>integer </td>
-	<td>Product Price </td>
-	<td>no </td>
-</tr>
-<tr>
-	<td>remarks </td>
-	<td>string(64) </td>
-	<td>Remark/transaction description,<br>*recommended to use a unique value </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>beneficiaryBankCode </td>
-	<td>string(64) </td>
-	<td>Beneficiary Bank Code</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>beneficiaryAccountNo </td>
-	<td>string(64) </td>
-	<td>Beneficiary Account Number</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/disbursement-inquiry
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|productCode |string(64) |Product Code |yes |
+|productPrice |string(64) |Product Price |no |
+|remarks |string(64) |Remark/transaction description,<br>*recommended to use a unique value |yes |
+|beneficiaryBankCode |string(64) |Beneficiary Bank Code |yes |
+|beneficiaryAccountNo |string(64) |Beneficiary Account Number |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/disbursement-inquiry HTTP/1.2
 Content-type: application/json
@@ -99,14 +42,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -134,80 +70,32 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
         }
     }
 }
-
-
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Payment Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Payment</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/disbursement-payment </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="4">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerApprovalNo </td>
-	<td>string(64) </td>
-	<td>Unique number after <b>Service User</b> success deducting customer balance</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/disbursement-payment
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerApprovalNo | string(64) | Unique number after **Service User** success deducting customer balance | yes |
+|partnerReferenceNo |string(64) |Unique Transaction Number from **Service User** |yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/disbursement-payment HTTP/1.2
 Content-type: application/json
@@ -222,14 +110,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -261,69 +142,28 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Advice Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Advice</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/disbursement-advice </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="3">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/disbursement-advice
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/disbursement-advice HTTP/1.2
 Content-type: application/json
@@ -337,14 +177,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -376,73 +209,28 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Callback Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Callback</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">{CallbackUrl}</td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="3">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Body Payload </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>responseCode </td>
-	<td>string(2) </td>
-	<td>Response Code from <b>Service User</b> [00 or 03] </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>responseMessage </td>
-	<td>string(64) </td>
-	<td>Response Message from <b>Service User</b> [00 = Success, 03 = Failed or other message] </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : {CallbackURL}
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Payload
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|responseCode |string(2) |Response Code from **Service User** [00 or 03] |yes |
+|responseMessage |string(64) |Response Message from **Service User** [00 = Success, 03 = Failed or other message] |yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST https://www.partner-url.com/ HTTP/1.2
 Content-type: application/json
@@ -477,14 +265,7 @@ X-TIMESTAMP: 2022-06-17T13:50:04+07:00
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -494,8 +275,3 @@ X-TIMESTAMP: 2022-06-17T13:50:04+07:00
     "result": "",
 }
 ```
-
-
-</td>
-</tr>
-</table>

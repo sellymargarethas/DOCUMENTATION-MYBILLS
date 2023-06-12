@@ -1,57 +1,25 @@
 # Flazz BCA
 ## API Credential Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Credential</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-get-credential </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="2">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/bca-flazz-get-credential
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/bca-flazz-get-credential HTTP/1.2
 Content-type: application/json
@@ -64,14 +32,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -96,82 +57,30 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-</table>
-
 ## API Inquiry Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Inquiry</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-inquiry </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>productCode </td>
-	<td>string(64) </td>
-	<td>Product Code</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>customerID </td>
-	<td>string(64) </td>
-	<td>Customer ID of the transaction</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>requestData </td>
-	<td>string(448) </td>
-	<td>Card Data </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/bca-flazz-inquiry
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|productCode |string(64) |Product Code |yes |
+|customerID |string(64) |Customer ID of the transaction |yes |
+|requestData |string(448) |Card Data |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/bca-flazz-inquiry HTTP/1.2
 Content-type: application/json
@@ -187,14 +96,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -225,82 +127,30 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-</table>
-
 ## API Payment Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Payment</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-payment </td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerApprovalNo </td>
-	<td>string(64) </td>
-	<td>Unique number after <b>Service User</b> success deducting customer balance</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>requestData </td>
-	<td>string(448) </td>
-	<td>Card Data</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/bca-flazz-payment
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerApprovalNo | string(64) |Unique number after **Service User** success deducting customer balance |yes |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+|requestData |string(448) |Card Data |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST .../v2.0/bca-flazz-payment HTTP/1.2
 Content-type: application/json
@@ -316,14 +166,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -356,75 +199,29 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Acknowledge Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Acknowledge</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-ack</td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="4">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>requestData </td>
-	<td>string(448) </td>
-	<td>Card Data</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path: https://{host}/{version}/bca-flazz-ack
 
+### HTTP Method
+HTTP Method: POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|referenceNo | string(64) |Unique Transaction Number from **Service Provider** |yes |
+|requestData |string(448) |Card Data |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST https://www.partner-url.com/bca-flazz-ack HTTP/1.2
 Content-type: application/json
@@ -439,14 +236,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -459,75 +249,29 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Reversal Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Reversal</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-reversal</td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="4">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>requestData </td>
-	<td>string(448) </td>
-	<td>Card Data</td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/bca-flazz-reversal
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+|requestData |string(448) |Card Data |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST https://www.partner-url.com/bca-flazz-reversal HTTP/1.2
 Content-type: application/json
@@ -542,14 +286,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -562,69 +299,28 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-</td>
-</tr>
-</table>
-
 ## API Advice Table
-<table>
-<tr>
-	<td>Name </td>
-	<td  colspan="4">API Advice</td>
-</tr>
-<tr>
-	<td>URL Path </td>
-	<td  colspan="4">https://{host}/{version}/bca-flazz-advice</td>
-</tr>
-<tr>
-	<td>HTTP Method </td>
-	<td  colspan="4">POST </td>
-</tr>
-<tr>
-	<td  rowspan="5">HTTP Header </td>
-	<td  colspan="2"><b>Header Name</b></td>
-	<td  colspan="2"><b>Header Value</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Content-Type </td>
-	<td  colspan="2">application/json </td>
-</tr>
-<tr>
-	<td  colspan="2">X-TIMESTAMP </td>
-	<td  colspan="2">[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) </td>
-</tr>
-<tr>
-	<td  colspan="2">X-SIGNATURE </td>
-	<td  colspan="2"><b>[Digital Signature]</b></td>
-</tr>
-<tr>
-	<td  colspan="2">Authorization </td>
-	<td  colspan="2">Basic <b>[JWT Token]</b>  </td>
-</tr>
-<tr>
-	<td  rowspan="3">HTTP Body Request </td>
-	<td><b>Field</b></td>
-	<td><b>Data Type</b></td>
-	<td><b>Descriptions</b></td>
-	<td><b>Mandatory</b></td>
-</tr>
-<tr>
-	<td>partnerReferenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service User</b> </td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>referenceNo </td>
-	<td>string(64) </td>
-	<td>Unique Transaction Number from <b>Service Provider</b></td>
-	<td>yes </td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Request </td>
-	<td  colspan="4">
+### URL Path
+URL Path : https://{host}/{version}/bca-flazz-advice
 
+### HTTP Method
+HTTP Method : POST
 
+### HTTP Header
+|Header Name | Header Value |
+| --- | --- |
+|Content-Type | application/json |
+|X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
+|X-SIGNATURE|**[Digital Signature]** |
+|Authorization|Basic **[JWT Token]**|
+
+### HTTP Body Request
+|Field | Data Type | Descriptions | Mandatory |
+| --- | --- | --- | --- |
+|partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
+|referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
+
+### Sample HTTP Raw Request
 ```php
 POST https://www.partner-url.com/bca-flazz-advice HTTP/1.2
 Content-type: application/json
@@ -638,14 +334,7 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-
-</td>
-</tr>
-<tr>
-	<td>Sample HTTP Raw Response (Success) </td>
-	<td  colspan="4">
-
-
+### Sample HTTP Raw Response (Success)
 ```php
 {
     "responseCode": "00",
@@ -676,8 +365,3 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
     }
 }
 ```
-
-
-</td>
-</tr>
-</table>
