@@ -6,8 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome-1">
         <meta name="description" content="Description">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -21,22 +20,16 @@
                 maxLevel: 1,
                 plugins: [
                     function page(hook, vm) {
-                    // var header = [
-                    //     '<header>',
-                    //     '<img src="_MEDIA/header.png">',
-                    //     '</header>',
-                    //     '<hr/>',
-                    // ].join('');
-
                     var footer = [
                         '<hr/>',
-                        '<footer>',
-                        '<span>&copy;2023 | PT Mitra Kasih Perkasa</span><br>',
+                        '<footer style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); grid-auto-rows: auto;max-width: 100%;">',
+                        '<section style="float:left">&copy;2023 | PT Mitra Kasih Perkasa</section>',
+                        '<section><img class="iconmobile" src="_MEDIA/mobile.png" alt="MKPMobile" style="float:right; max-width: 30%;"></section>',
+                        '</div>',
                         '</footer>',
                     ].join('');
 
                     hook.afterEach(function (html) {
-                        // return header + html + footer;
                         return html + footer;
                     });
                     },
@@ -44,10 +37,11 @@
             }
         </script>
         <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-        <!-- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.js"></script>
-        <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script> -->
         <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-        <!-- <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
+        <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
     </body>
 </html>

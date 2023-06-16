@@ -1,12 +1,13 @@
-# PLN PREPAID
-## API Inquiry Table
-### URL Path
-URL Path : https://{host}/{version}/inquiry
+<h2><b>PLN PREPAID</b></h2>
 
-### HTTP Method
-HTTP Method : POST
+### API Inquiry Table
+#### URL Path
+URL Path : `https://{host}/{version}/inquiry`
 
-### HTTP Header
+#### HTTP Method
+HTTP Method : `POST`
+
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -14,7 +15,7 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
@@ -23,7 +24,7 @@ HTTP Method : POST
 |customerID |string(64) |Customer ID of the transaction |yes |
 |customerPeriode |string(64) |Total n month would be paid **(mandatory for specified product)** |conditional |
 
-### Sample HTTP Raw R
+#### Sample HTTP Raw Request
 ```json
 POST .../v2.0/inquiry HTTP/1.2
 Content-type: application/json
@@ -40,7 +41,151 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp additionalInfo</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp customerName</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+        <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp idPelanggan</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+        <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp nomorMeter</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+        <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp tarifDaya</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -72,14 +217,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-## API Payment Table
-### URL Path
-URL Path : https://{host}/{version}/payment
+### API Payment Table
+#### URL Path
+URL Path : `https://{host}/{version}/payment`
 
-### HTTP Method
-HTTP Method : POST
+#### HTTP Method
+HTTP Method : `POST`
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -87,14 +232,14 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerApprovalNo | string(64) |Unique number after **Service User** success deducting customer balance |yes |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST .../v2.0/payment HTTP/1.2
 Content-type: application/json
@@ -109,7 +254,191 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp additionalInfo</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp customerName</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp idPelanggan</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp nomorMeter</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp noRef</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp jumlahKwh</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp tarifDaya</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp angsuran</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp materai</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp stroomToken</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp rpStroomToken</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ppj</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ppn</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -140,14 +469,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-## API Advice Table
-### URL Path
-URL Path : https://{host}/{version}/advice
+### API Advice Table
+#### URL Path
+URL Path : `https://{host}/{version}/advice`
 
-### HTTP Method
-HTTP Method : POST
+#### HTTP Method
+HTTP Method : `POST`
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -155,13 +484,13 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
-### Sample HTTP Raw Request		
+#### Sample HTTP Raw Request		
 ```json
 POST .../v2.0/payment HTTP/1.2
 Content-type: application/json
@@ -174,7 +503,197 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
     "referenceNo": "DEV-220118-0000006",
 }
 ```
-### Sample HTTP Raw Response (Success)
+
+#### HTTP Body Response
+<table>
+    <tr>
+        <td><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp partnerApprovalNo</td>
+        <td>string(64)</td>
+        <td>Unique number after Service User success deducting customer balance</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp additionalInfo</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp customerName</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp idPelanggan</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp nomorMeter</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp noRef</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp jumlahKwh</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp tarifDaya</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp angsuran</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp materai</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp stroomToken</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp rpStroomToken</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ppj</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ppn</td>
+        <td>-</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -207,20 +726,20 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-## API Callback Table
-### URL Path
-URL Path : {CallbackURL}
+### API Callback Table
+#### URL Path
+URL Path : `{CallbackURL}`
 
-### HTTP Method
-HTTP Method : POST
+#### HTTP Method
+HTTP Method : `POST`
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
 |X-TIMESTAMP|[datetime] (yyyy-MM-ddTHH:mm:ss+07:00) |
 
-### HTTP Body Payload
+#### HTTP Body Payload
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
@@ -228,7 +747,7 @@ HTTP Method : POST
 |responseMessage |string(64) |Response Message from **Service User** [00 = Success, 03 = Failed or other message] |yes |
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST https://www.partner-url.com/ HTTP/1.2
 Content-type: application/json
@@ -263,7 +782,37 @@ X-TIMESTAMP: 2022-01-18T13:50:04+07:00
     }
 }
 ```
-### Sample HTTP Raw Response (Success)
+
+#### HTTP Body Response
+<table>
+    <tr>
+        <td><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -272,3 +821,12 @@ X-TIMESTAMP: 2022-01-18T13:50:04+07:00
     "result": "",
 }
 ```
+
+### Scenario Test
+|productCode|customerNumber|Status|
+|---|---|---|
+|PLNPR20|829374298301|- inquiry success (00) <br> - payment success (00) <br> - advice success (00)|
+|PLNPR20|829374298302|- inquiry success (00) <br> - payment pending (02) <br> - advice success (00)|
+|PLNPR20|829374298303|- inquiry success (00) <br> - payment pending (02) <br> - advice failed (96)|
+|PLNPR20|829374298304|- inquiry success (00) <br> - payment failed (96)|
+|PLNPR20|829374298305|- inquiry failed (96)|

@@ -1,12 +1,13 @@
-# Flazz BCA
-## API Credential Table
-### URL Path
+<h2><b>Flazz BCA</b></h2>
+
+### API Credential Table
+#### URL Path
 URL Path : https://{host}/{version}/bca-flazz-get-credential
 
-### HTTP Method
+#### HTTP Method
 HTTP Method : POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -14,12 +15,12 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST .../v2.0/bca-flazz-get-credential HTTP/1.2
 Content-type: application/json
@@ -32,7 +33,101 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp additionalInfo</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzMID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzTID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzATD</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzAccessCard</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzAccessCardCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp bcaFlazzSignature</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -57,14 +152,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-## API Inquiry Table
-### URL Path
+### API Inquiry Table
+#### URL Path
 URL Path : https://{host}/{version}/bca-flazz-inquiry
 
-### HTTP Method
+#### HTTP Method
 HTTP Method : POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -72,7 +167,7 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
@@ -80,7 +175,7 @@ HTTP Method : POST
 |customerID |string(64) |Customer ID of the transaction |yes |
 |requestData |string(448) |Card Data |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST .../v2.0/bca-flazz-inquiry HTTP/1.2
 Content-type: application/json
@@ -96,7 +191,131 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp additionalInfo</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -127,14 +346,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-## API Payment Table
-### URL Path
+### API Payment Table
+#### URL Path
 URL Path : https://{host}/{version}/bca-flazz-payment
 
-### HTTP Method
+#### HTTP Method
 HTTP Method : POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -142,7 +361,7 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerApprovalNo | string(64) |Unique number after **Service User** success deducting customer balance |yes |
@@ -150,7 +369,7 @@ HTTP Method : POST
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 |requestData |string(448) |Card Data |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST .../v2.0/bca-flazz-payment HTTP/1.2
 Content-type: application/json
@@ -166,7 +385,136 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp partnerApprovalNo</td>
+        <td>string(64)</td>
+        <td>Unique number after Service User success deducting customer balance</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp additionalInfo</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -199,14 +547,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-## API Acknowledge Table
-### URL Path
+### API Acknowledge Table
+#### URL Path
 URL Path: https://{host}/{version}/bca-flazz-ack
 
-### HTTP Method
+#### HTTP Method
 HTTP Method: POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -214,14 +562,14 @@ HTTP Method: POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 |referenceNo | string(64) |Unique Transaction Number from **Service Provider** |yes |
 |requestData |string(448) |Card Data |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST https://www.partner-url.com/bca-flazz-ack HTTP/1.2
 Content-type: application/json
@@ -236,7 +584,46 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -249,14 +636,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-## API Reversal Table
-### URL Path
+### API Reversal Table
+#### URL Path
 URL Path : https://{host}/{version}/bca-flazz-reversal
 
-### HTTP Method
+#### HTTP Method
 HTTP Method : POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -264,14 +651,14 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 |requestData |string(448) |Card Data |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST https://www.partner-url.com/bca-flazz-reversal HTTP/1.2
 Content-type: application/json
@@ -286,7 +673,46 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -299,14 +725,14 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 ```
 
 
-## API Advice Table
-### URL Path
+### API Advice Table
+#### URL Path
 URL Path : https://{host}/{version}/bca-flazz-advice
 
-### HTTP Method
+#### HTTP Method
 HTTP Method : POST
 
-### HTTP Header
+#### HTTP Header
 |Header Name | Header Value |
 | --- | --- |
 |Content-Type | application/json |
@@ -314,13 +740,13 @@ HTTP Method : POST
 |X-SIGNATURE|**[Digital Signature]** |
 |Authorization|Basic **[JWT Token]**|
 
-### HTTP Body Request
+#### HTTP Body Request
 |Field | Data Type | Descriptions | Mandatory |
 | --- | --- | --- | --- |
 |partnerReferenceNo | string(64) | Unique Transaction Number from **Service User** | yes |
 |referenceNo |string(64) |Unique Transaction Number from **Service Provider** |yes |
 
-### Sample HTTP Raw Request
+#### Sample HTTP Raw Request
 ```json
 POST https://www.partner-url.com/bca-flazz-advice HTTP/1.2
 Content-type: application/json
@@ -334,7 +760,136 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
 }
 ```
 
-### Sample HTTP Raw Response (Success)
+#### HTTP Body Response
+<table>
+    <tr>
+        <td style="width:30%"><b>Field</b></td>
+        <td><b>Data Type</b></td>
+        <td><b>Descriptions</b></td>
+    </tr>
+    <tr>
+        <td>responseCode</td>
+        <td>string(2)</td>
+        <td>Response Code from Service User [00 or 03]</td>
+    </tr>
+    <tr>
+        <td>responseMessage</td>
+        <td>string(64)</td>
+        <td>Response Message from Service User [00 = Success, 03 = Failed or other message]</td>
+    </tr>
+    <tr>
+        <td>responseDatetime</td>
+        <td>string(100)</td>
+        <td>Response Date Time from Service User (yyyy-MM- dd'T'HH:mm:ss.SSS'T'Z)</td>
+    </tr>
+    <tr>
+        <td>partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>Array of object</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp partnerApprovalNo</td>
+        <td>string(64)</td>
+        <td>Unique number after Service User success deducting customer balance</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp partnerReferenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service User</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp referenceNo</td>
+        <td>string(64)</td>
+        <td>Unique Transaction Number from Service Provider</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantStoreName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp merchantOutletName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productReferenceCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productTypeID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productCode</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productName</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productPrice</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productAdminFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp productMerchantFee</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp transactionDate</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp customerID</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp additionalInfo</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp serialNumber</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+    <tr>
+        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp billDesc</td>
+        <td>string(64)</td>
+        <td>Lorem ipsum</td>
+    </tr>
+</table>
+
+#### Sample HTTP Raw Response (Success)
 ```json
 {
     "responseCode": "00",
@@ -365,3 +920,11 @@ Authorization: Bearer gp9HjjEj813Y9JGoqwOeOPWbnt4CUpvIJbU1mMU4a11MNDZ7Sg5u9a
     }
 }
 ```
+
+### Scenario Test
+|productCode|Status|
+|---|---|
+|EMOFLZ20|- inquiry success (00) <br> - payment success (00) <br> - acknowledge success (00)|
+|EMOFLZ20|- inquiry success (00) <br> - payment pending (02) <br> - reversal success (00)|
+|EMOFLZ20|- inquiry success (00) <br> - payment failed (96 or other)|
+|EMOFLZ20|- inquiry failed (96 or other)|

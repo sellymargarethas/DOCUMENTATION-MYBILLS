@@ -1,10 +1,11 @@
-﻿# Introduction
-## General Information
+﻿<h2></b>Introduction</b></h2>
+
+### General Information
 Service User in this context is **Partner**.
 <br>
-Service Provider in this copntext is **MKP Mobile**.
+Service Provider in this context is **MKP Mobile**.
 
-## Security
+### Security
 #### Technical and Security Standard
 The security standard is part of the Payment Standard which aims to ensure data confidentiality, data integrity, and service availability, regulate standards for authentication, authorization, and encryption to ensure data integrity and confidentiality, has a business continuity plan, as well as the implementation of a fraud detection system to mitigate potential fraud. In addition to referring to these security standards, Service Providers and Service Users must implement comprehensive control and protection of data and information from potential cyber risks to protect the system, user data, and data related to Service Providers and/or Service Users.
 
@@ -39,11 +40,11 @@ The communication encryption model uses Standard Symmetric Encryption Signature 
 
 #### URI Path Standardization
 URI resource path standardization with the following format :
-```json
+```php
 [domain-api]/[version]/[product-type]
 ```
 
-## Credential
+### Credential
 | Properties  | Type  | Description  |
 |---|---|---|
 | Secret Key  | string | *  |
@@ -63,7 +64,7 @@ __* Secret Key will be provided separately from this document, please request by
 
 __** Difference for every device__
 
-## JWT Signature
+### JWT Signature
 To create a JWT Signature, perform the following steps :
 1. Construct a JWT header in the following format :
     ```json
@@ -91,7 +92,7 @@ To create a JWT Signature, perform the following steps :
 10. Add Final JWT Signature result to header field Authorization as Basic Authorization in the request message.
 
 Sample JWT Signature Code Snippet on json :
-```json
+```php
     {
         # Create token header as a JSON string
         $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
@@ -123,22 +124,22 @@ Sample JWT Signature Code Snippet on json :
     }
 ```
 
-## Digital Signature
+### Digital Signature
 To create a Digital Signature, perform the following steps :
 1. Construct a stringToSign in the following format :
-    ```json
+    ```php
     HTTPMethod +”:“+ EndpointUrl +”:”+ JwtSignature +”:“+ Lowercase(HexEncode(SHA256(minify(RequestBody))))+“:“+ TimeStamp
     ```
     **TimeStamp format RFC 3339 (yyyy-MM-ddTHH:mm:ss+07:00)** <br>
     *encrypt checker: https://www.devglan.com/online-tools/hmac-sha256-online
 2. Sign with Symmetric Signature with algorithm **HMAC_SHA512 ([API Secret Key],stringToSign)**, which results in the following :
-    ```console
+    ```php
     eyJ1dWlkIjoiNDI1MDlFNkQxNEI1NDk4QSIsImNsaWVudElkIjoiVE9QRUQiLCJ1bml2Q29kZSI6IjgwMDEiLCJiaWxsaW5nTnVtYmVyIjoiOTE0MTkwMTkzMTc1In0
     ```
 3. Add Symmetric Signature result to header field **X-SIGNATURE** in request message
 
 Sample Digital Signature Code Snippet on json :
-```json
+```php
 # Init value
 $timestamp = '2022-07-15T17:11:11+07:00';
 

@@ -1,4 +1,7 @@
 # Topup
+This **Toupup** category may be used for a variety of APIs, including : <br>
+- 💳 **Flazz BCA**
+
 **API Workflow** that is available for integration are “inquiry, payment, advice, and callback”.
 
 1. Credential : The credential is used to generate a secure session for a user before initiating a transaction. Once the user's credentials are verified, the server generates a unique session ID.

@@ -1,4 +1,8 @@
 ﻿# Biller
+This **Biller** category may be used for a variety of APIs, including : <br>
+- 🚰 **PDAM** <br>
+- ⚡ **PLN Prepaid**
+
 **API Workflow** that is available for integration are “inquiry, payment, advice, and callback”.
 
 1. Inquiry : Every time a payment occurs, **Service User** will make an inquiry to the **Service Provider** to get details of the payment/billing.
