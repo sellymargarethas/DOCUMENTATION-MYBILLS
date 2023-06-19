@@ -1,5 +1,3 @@
-<!-- docs/_sidebar.md -->
-
 - [**Home**](/)
 
 - [**Introduction**](introduction.md)
@@ -48,3 +46,4 @@
 - **Appendices**
     - [API Response Code](rc.md)
 - [**FAQ**](faq.md)
+- [**Changelog**](changelog.md)
